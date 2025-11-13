@@ -13,4 +13,14 @@ function isPrime(num){
         return false
     }
 }
-console.log(isPrime(num))git 
+console.log(isPrime(num)) 
+
+function checkEvenOdd(num){
+    if(num % 2 === 0){
+        console.log("Even")
+    }
+    else{
+        console.log("Odd")
+    }
+}
+checkEvenOdd(num)
