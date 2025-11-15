@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Grid</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: repeat(3,100px);
+            gap: 10px;
+            justify-content: center;
+        }
+        .container>div{
+            text-align: center;
+            color: white;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container>div:first-child{
+            background-color: orangered;
+        }
+        .container>div:nth-child(2){
+            background-color:#4343f0;
+        }
+        .container>div:nth-child(3){
+            background-color:rgb(245, 245, 29);
+        }
+        .container>div:nth-child(4){
+            background-color: rgb(221, 131, 221);
+        }
+        .container>div:nth-child(5){
+            background-color: rgb(73, 214, 73);
+        }
+        .container>div:nth-child(6){
+            background-color:skyblue;
+        }
+        .container>div:nth-child(7){
+            background-color: lightsalmon;
+        }
+        .container>div:nth-child(8){
+            background-color: rgb(90, 173, 206);
+        }
+        .container>div:nth-child(9){
+            background-color: maroon;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>2.</div>
+        <div>3.</div>
+        <div>4.</div>
+        <div>5.</div>
+        <div>6.</div>
+        <div>1.</div>
+        <div>7.</div>
+        <div>8.</div>
+        <div>9.</div>
+    </div>
+</body>
+</html>
