@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        .card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width:300px;
+            height: 400px;
+            padding: 20px;
+            margin: auto;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.24);
+        }
+        .card>div>img{
+            width: 120px;
+            height:120px;
+            border-radius: 50%;
+          
+            border: 2px solid brown ;
+        }
+        .card>div>h2{
+            color: brown;
+            font-size: 25px; 
+
+        }
+        .card>div>p{
+            font-size: 17px;
+            color: rgb(49, 48, 48);
+        }
+        .card>.links>a{
+            margin: 20px;
+            padding-top: 10px;
+            color:  brown;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .card>.links>a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <div class="card">
+        <div>
+            <img src="https://www.kindpng.com/picc/m/146-1468338_icon-profile-blue-transparent-hd-png-download.png" alt="profile image">
+        </div>
+        <hr>
+        <div>
+            <h2>Mahalaxmi Komuravelly</h2>
+            <p>Frontend Developer</p>
+            <p>I build fast, responsive, and modern UIs <br>
+            using clean, maintainable code.</p>
+        </div>
+        <div class="links">
+            <a href="Email">Email</a>
+            <a href="#Linkedin">Linkedin</a>
+            <a href="#Github">Github</a>
+
+        </div>
+        
+    </div>
+    
+
+</body>
+</html>
