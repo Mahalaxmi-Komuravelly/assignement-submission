@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Website</title>
     <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
         header{
             width: 100%;
             display: flex;
@@ -26,21 +32,59 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: rgb(128, 128, 250);
+            color: rgb(90, 90, 221);
             gap:30px;
             margin: auto;
         }
         .nav>div>p{
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 16px;
         }
         header button{
-            font-size: 14px;
+            font-size: 16px;
             color: white;
             background-color: red;
             padding: 5px 10px;
             border: none;
             line-height: 1.4;
+            font-weight: bold;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,500px); 
+            gap:10px;
+            margin: 15px 20px;
+        }
+        .card{
+            background-color: red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: auto;
+            padding: 10px 15px;
+        }
+        .card img{
+            height: auto;
+            width: 120px;
+            margin-bottom: 15px;
+        }
+        .card h3,.card p{
+            color: white;
+        }
+        .card h3{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .card p{
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .card button{
+            border: none;
+            color: red;
+            padding: 8px 20px;
+            background-color: white;
         }
     </style>
 </head>
@@ -58,5 +102,50 @@
         </nav>
         <button>Download App</button>
     </header>
+
+    <!-- Top Section -->
+    <main>
+        <section class="Top-Section">
+            <div class="container">
+                <div class="card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Item Image">
+                    <h3>VEG PIZZA</h3>
+                    <p>A delight for veggie lovers! Choose from <br> our wide range of delicious vegetarian <br> pizzas,it's softer and tastier</p>
+                    <button>VIEW ALL</button>
+                </div>
+                <div class="card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Item Image">
+                    <h3>VEG PIZZA</h3>
+                    <p>A delight for veggie lovers! Choose from <br> our wide range of delicious vegetarian <br> pizzas,it's softer and tastier</p>
+                    <button>VIEW ALL</button>
+                </div>
+                <div class="card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Item Image">
+                    <h3>VEG PIZZA</h3>
+                    <p>A delight for veggie lovers! Choose from <br> our wide range of delicious vegetarian <br> pizzas,it's softer and tastier</p>
+                    <button>VIEW ALL</button>
+                </div>
+                <div class="card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Item Image">
+                    <h3>VEG PIZZA</h3>
+                    <p>A delight for veggie lovers! Choose from <br> our wide range of delicious vegetarian <br> pizzas,it's softer and tastier</p>
+                    <button>VIEW ALL</button>
+                </div>
+                <div class="card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Item Image">
+                    <h3>VEG PIZZA</h3>
+                    <p>A delight for veggie lovers! Choose from <br> our wide range of delicious vegetarian <br> pizzas,it's softer and tastier</p>
+                    <button>VIEW ALL</button>
+                </div>
+                <div class="card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Item Image">
+                    <h3>VEG PIZZA</h3>
+                    <p>A delight for veggie lovers! Choose from <br> our wide range of delicious vegetarian <br> pizzas,it's softer and tastier</p>
+                    <button>VIEW ALL</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
