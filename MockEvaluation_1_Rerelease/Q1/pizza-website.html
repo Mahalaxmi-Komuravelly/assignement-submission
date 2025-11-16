@@ -49,19 +49,28 @@
             line-height: 1.4;
             font-weight: bold;
         }
-        .container{
+        section h2{
+            font-weight: bold;
+        }
+        .Top-Section{
             display: grid;
-            grid-template-columns: repeat(3,500px); 
+            grid-template-columns: repeat(3,1fr); 
             gap:10px;
             margin: 15px 20px;
+        }
+        .container{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
         }
         .card{
             background-color: red;
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 300px;
-            height: auto;
+            /* width: 300px;
+            height: auto; */
             padding: 10px 15px;
         }
         .card img{
@@ -86,6 +95,66 @@
             padding: 8px 20px;
             background-color: white;
         }
+        .Mid-section{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.6);
+        }
+        .container-mid{
+            display: flex;
+            
+        }
+        .mid-card{
+            height: auto;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            /* border: 1px solid gray; */
+        }
+        .mid-card>img{
+            height: auto;
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        .mid-card>h3{
+            margin-bottom: 15px;
+        }
+        .mid-card>p{
+            margin-bottom: 10px;
+        }
+        .mid-card div{
+            color: red;
+        }
+        .bottom-section{
+            display: flex;
+            gap: 200px;
+            margin-top: 15px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .bottom-section>div>h1{
+            font-weight: bold;
+            font-size: 40px;
+        }
+        .bottom-section>div>p{
+            font-size: 20px;
+        }
+        .bottom-section>img{
+            width: 50%;
+            height: auto;
+            background-color: white;
+        }
+        .img-box>img{
+            width: 50%;
+            height: 50px;
+        }
+        .img-box{
+            display: flex;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -106,6 +175,7 @@
     <!-- Top Section -->
     <main>
         <section class="Top-Section">
+            <h2>Order</h2>
             <div class="container">
                 <div class="card">
                     <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-22/Screenshot%202022-12-22%20at%208.37.04%20AM_353938.png" alt="Item Image">
@@ -145,7 +215,72 @@
                 </div>
             </div>
         </section>
+        <section class="Mid-section">
+            <h2>Explore</h2>
+            <div class="container-mid">
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+                <div class="mid-card">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%203.06.17%20PM_590391.png" alt="menu card">
+                    <h3>OUR MENU</h3>
+                    <p>Explore our range of delicious pizzas,delivered in 30 <br>minutes</p>
+                    <div>DISCOVER PIZZA</div>
+                </div>
+            </div>
+        </section>
     </main>
-
+    <footer>
+        <div class="bottom-section">
+            <img src="https://coding-platform.s3.amazonaws.com/dev/lms/tickets/48f2fc25-38f4-4d25-a878-78f15988b371/kXSpyg2iCHrCEljP.png" alt="Mobile app">
+            <div>
+                <h1>Unlock Exclusive Offers</h1>
+                <p>For lightening fast ordering experience download the <br> Domino's app</p>
+                <div class="img-box">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%202.47.09%20PM_558991.png" alt="Google Store">
+                    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-12-21/Screenshot%202022-12-21%20at%202.47.43%20PM_652243.png" alt="Apple Store">
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
