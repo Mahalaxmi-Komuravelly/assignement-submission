@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <style>
+        .container{
+        display:grid;
+        grid-template-columns: repeat(6,1fr);
+        gap:20px;
+        width:50%;
+        margin: auto;
+      }
+      .container>div{
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 12px;
+      }
+      .container>div:first-child{
+        visibility:hidden;
+      }
+      
+      .container>div:nth-child(even){
+        background-color: pink;
+        font-weight: bold;
+      }
+      .container>div:nth-child(odd){
+        background-color: yellow;
+        font-weight: bold;
+      }
+      .container>div:nth-child(6n+1){
+        background-color: skyblue;
+      }
+      .container>div:last-child{
+        grid-column: 1/-1;
+        justify-content: left;
+        padding: 5px;
+      }
+      h1{
+        font-family: cursive;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <h1>Weekly Schedule</h1>
+      <div class='container'>
+        <div>Empty</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>08:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>09:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>10:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>11:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>12:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>13:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>14:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>15:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>16:00</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>Note:</div>
+        
+      </div>
+</body>
+</html>
