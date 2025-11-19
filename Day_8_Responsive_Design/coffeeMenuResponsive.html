@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Coffee Menu</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        h3{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h4,p{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        p{
+            color: gray;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            padding:20px 50px;
+            /* width: 100%; */
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            gap: 20px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, .1);
+            padding: 15px;
+            width: 350px;
+        }
+        .card img{
+            width: 100%;
+        }
+        .card>div{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card>div>h4{
+            color: chocolate;
+        }
+        h3,h4{
+            margin: 0;
+        }
+
+        /* small screens */
+        @media (max-width:600px) {
+            .container{
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+        /* Medium screens */
+        @media (min-width:600px) and (max-width:992px) {
+            .container{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+                <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?_gl=1*1fs2q1n*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDMyNzQkbzkkZzEkdDE3NjM1NDMzMDQkajMwJGwwJGgw" alt="Cappuccino Image">
+            <div>
+                <h3>Cappuccino</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/23503917/pexels-photo-23503917.jpeg?_gl=1*1yskics*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ4MTI5JGo1NyRsMCRoMA.." alt="Americano Image">
+            <div>
+                <h3>Americano</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/34768079/pexels-photo-34768079.jpeg?_gl=1*12t43sl*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ4MzQxJGo1OCRsMCRoMA.." alt="Espresso Image">
+            <div>
+                <h3>Espresso</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/15071994/pexels-photo-15071994.jpeg?_gl=1*1xzpty8*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ4NDc4JGo1OSRsMCRoMA.." alt="Macchiato Image">
+            <div>
+                <h3>Macchiato</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/2910874/pexels-photo-2910874.jpeg?_gl=1*12iklxa*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ4NzkzJGo1OSRsMCRoMA.." alt="Mocha Image">
+            <div>
+                <h3>Mocha</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/34720397/pexels-photo-34720397.jpeg?_gl=1*15qb5jz*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ5MTE3JGo2MCRsMCRoMA.." alt="Coffee Latte Image">
+            <div>
+                <h3>Coffee Latte</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/30548308/pexels-photo-30548308.jpeg?_gl=1*9gnp91*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ5MjA3JGo1OSRsMCRoMA.." alt="Piccolo Image">
+            <div>
+                <h3>Piccolo Latte</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/34124345/pexels-photo-34124345.jpeg?_gl=1*3karec*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ5MzAyJGo1MSRsMCRoMA.." alt="Ristretto Image">
+            <div>
+                <h3>Ristretto</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+        <div class="card">
+                <img src="https://images.pexels.com/photos/32972513/pexels-photo-32972513.jpeg?_gl=1*8v8lfe*_ga*NTQwNjc4NDMuMTc2MjYwODM3OQ..*_ga_8JE65Q40S6*czE3NjM1NDgxMjYkbzEwJGcxJHQxNzYzNTQ5NTMxJGo0NCRsMCRoMA.." alt="Affogato Image">
+            <div>
+                <h3>Affogato</h3>
+                <h4>$49</h4>
+            </div>
+            <p>Usage of the Internet is becoming more <br> common due to rapid advance.</p>
+        </div>
+
+    </div>    
+</body>
+</html>
