@@ -7,3 +7,8 @@ let categoryCount = productCategories.reduce(
 )
 
 console.log(categoryCount);
+
+//Extra challenge
+
+let sortedCategories = Object.entries(categoryCount).sort((a,b) => b[1]-a[1]);
+console.log(sortedCategories)
