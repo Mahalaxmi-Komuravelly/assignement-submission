@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DOM Manipulation</title>
+</head>
+<body>
+    <input id="color" type="text" placeholder="Enter Color Name"><br><br>
+    <input id="msg" type="text" placeholder="Enter Text"><br><br>
+    <button onclick="changeColor()">Change Background</button>
+    <button onclick="updateText()">Update Text</button><br><br>
+    <div id="content">Change Background and Update Text</div>
+    <script>
+    function changeColor(){
+        let backgcolor = document.getElementById("color").value;
+        let divElement=document.getElementById("content");
+        let testDiv=document.createElement("div");
+        testDiv.style.backgroundColor=backgcolor;
+        if(testDiv.style.backgroundColor === ""){
+            alert("Invalid color name!");
+        }else{
+            divElement.style.backgroundColor=backgcolor;
+        }
+    }
+    function updateText(){
+        let data = document.getElementById("msg").value;
+        let divText=document.getElementById("content");
+        if(data===""){
+            alert("Please enter some text!");
+        }
+        else{
+            divText.textContent=data;
+        }
+    }
+</script>
+</body>
+
+</html>
