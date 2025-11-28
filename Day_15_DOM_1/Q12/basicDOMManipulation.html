@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DOM Manipulation</title>
+</head>
+<body>
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+</body>
+<script>
+    function addItem(){
+      let list = document.querySelector("ul");
+      let item=document.createElement("li");
+      item.textContent="New Item";
+      list.appendChild(item);
+      let items=list.getElementsByTagName("li");
+      let len = items.length;
+      if(len % 2 == 0){
+        item.style.color="red";
+        item.style.fontStyle="italic";
+      }
+      else{
+        item.style.color="blue";
+        item.style.fontWeight="bold";
+      }
+    }
+</script>
+</html>
