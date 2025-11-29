@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            background-color: rgb(106, 106, 219);
+            color: white;
+            margin: 6px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        input{
+            border-radius: 5px;
+            padding: 5px;
+            border:1px solid black;
+        }
+        li{
+            list-style-type: circle;
+            padding: 5px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"id="task" placeholder="Enter Task">
+    <button id="addtask">Add Task</button>
+    <div>
+         <ul id="tasks">
+
+        </ul>
+    </div>
+    <script>
+        let list=document.getElementById("tasks");
+        let addtaskbtn=document.getElementById("addtask");
+        addtaskbtn.addEventListener("click",addTask);
+        function addTask(){
+            let task=document.getElementById("task").value;
+            let item = document.createElement("li");
+            item.textContent=task;
+            if(task === ""){
+                alert("Please Enter Task");
+            }
+            list.appendChild(item);
+            document.getElementById("task").value="";
+            let delbtn=document.createElement("button");
+            delbtn.textContent="Delete";
+            let completebtn=document.createElement("button");
+            completebtn.textContent="Complete";
+            delbtn.setAttribute("id","del");
+            completebtn.setAttribute("id","complete");
+            item.append(delbtn,completebtn);
+            delbtn.addEventListener("click",()=>{
+                item.remove();
+            });
+            completebtn.addEventListener("click",()=>{
+                item.style.textDecoration="line-through";
+            })
+        }
+    </script>
+</body>
+</html>
