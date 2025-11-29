@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Book Management App</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: whitesmoke;
+        }
+        #booklist{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+        #bookform{
+            background-color: white;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, .24);
+            width: 350px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        input,select,button{
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            
+        }
+        button{
+            color: white;
+            background-color: rgb(73, 100, 230);
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #delete{
+            background-color: red;
+            padding: 7px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+        h1,h3{
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(73, 100, 230) ;
+            font-style: italic;
+        }
+        #controls{
+            width:90%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; 
+            
+        }
+        .card img {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Management</h1>
+    <button id="adnbtn">Go To Home Page</button>
+    <div id="container">
+        
+            <form id="bookform">
+                <h3>Add Book</h3>
+                <input type="text" id="title" placeholder="Enter Book Title"><br>
+                <input type="text" id="author" placeholder="Enter Book Author"><br>
+                <select id="category">
+                    <option value="">Select Category</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Technical">Technical</option>
+                </select><br>
+                <button type="submit" id="addbook">Add Book</button>
+        </form>
+        <div id="controls">
+            <button id="sortaz">Sort A->Z</button>
+            <button id="sortza">Sort Z->A</button>
+            <select id="filter">
+                <option value="">All</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Technical">Technical</option>
+            </select>
+        </div>
+        
+        <div id="booklist">
+
+        </div>
+    </div>
+    <script>
+        let goToHomebtn=document.getElementById("adnbtn");
+        goToHomebtn.addEventListener("click",()=>{
+            window.location.href="index.html";
+        });
+        let addbookbtn = document.getElementById("bookform");
+        addbookbtn.addEventListener("submit",addBook);
+        let books=[];
+        function addBook(event){
+            event.preventDefault();
+            let title = document.getElementById("title").value;
+            let author = document.getElementById("author").value;
+            let category = document.getElementById("category").value;
+            let imgURL= "https://m.media-amazon.com/images/I/71ZB18P3inL._SY522_.jpg";
+
+            let book={
+                title,
+                author,
+                category,
+                imgURL
+            }
+            books.push(book);
+            renderBooks(books);
+        }
+        function renderBooks(bookList){
+            let booklistDiv = document.getElementById("booklist");
+            booklistDiv.innerHTML="";
+            bookList.forEach((book,index)=>{
+                let card=document.createElement("div");
+                card.setAttribute("class","card");
+                let bookimg=document.createElement("img");
+                bookimg.src=book.imgURL;
+                let title=document.createElement("h3");
+                title.textContent=book.title;
+                let author=document.createElement("h4");
+                author.textContent=book.author;
+                let category=document.createElement("h5");
+                category.textContent=book.category;
+                let delbook=document.createElement("button");
+                delbook.setAttribute("id","delete");
+                delbook.textContent="Delete";
+                delbook.addEventListener("click",()=>{
+                    books.splice(index,1);
+                    renderBooks(books);
+                })
+                card.appendChild(bookimg);
+                card.appendChild(title);
+                card.appendChild(author);
+                card.appendChild(category);
+                card.appendChild(delbook);
+                booklistDiv.appendChild(card); 
+            });
+            document.getElementById("title").value="";
+            document.getElementById("author").value="";
+            document.getElementById("category").value="";    
+        }  
+        
+        document.getElementById("sortaz").addEventListener("click",sortAZ);
+        document.getElementById("sortza").addEventListener("click",sortZA);
+        function sortAZ(){
+            books.sort((a,b)=>a.title.localeCompare(b.title));
+            renderBooks(books);
+        }
+        function sortZA(){
+            books.sort((a,b)=>b.title.localeCompare(a.title));
+            renderBooks(books);
+        }
+       let bookCategory=document.getElementById("filter");
+       
+       bookCategory.addEventListener("change",filterBooks);
+        function filterBooks(){
+            let selectedCategory=bookCategory.value;
+            if(selectedCategory===""){
+                renderBooks(books);
+                return;
+            }
+            let filtered = books.filter(book=>book.category===selectedCategory);
+            renderBooks(filtered);
+        }
+    </script>
+</body>
+</html>
