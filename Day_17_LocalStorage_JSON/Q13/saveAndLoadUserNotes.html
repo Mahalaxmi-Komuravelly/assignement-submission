@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+        }
+        button{
+            background-color: rgb(73, 73, 220);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+        }
+        
+        #box{
+            box-shadow: 0 2px 6px rgba(0.24);
+            background-color: white;
+            border-radius: 5px;
+            width: 350px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 20px auto;   
+        }
+        h2{
+            text-align: center;
+        }
+        h2,p{
+            color: rgb(73, 73, 220);
+        }
+        p{
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 5px;
+            padding: 8px;
+        }
+        textarea{
+            padding-top: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Notes Manager(localStorage)</h2>
+    <div id="box">
+        
+        <textarea id="noteInput" placeholder="Write text here..."></textarea><br>
+        <button id="loadnotes">Load Notes</button><br>
+        <button id="clearnotes">Clear Notes</button><br>
+    </div>
+    <div id="notesList">
+
+    </div>
+    <script>
+        let notes=JSON.parse(localStorage.getItem("notes"))||[];    
+        function save(){
+            localStorage.setItem("notes",JSON.stringify(notes));
+        }  
+        function loadNotes(){
+            let note=document.getElementById("noteInput").value;
+            if(note === ""){
+                alert("Please enter text");
+            }
+            else{
+                notes.push(note);
+                save();
+                renderNotes();
+                document.getElementById("noteInput").value="";
+            }
+            
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        let loadnotebtn=document.getElementById("loadnotes");
+        loadnotebtn.addEventListener("click",loadNotes);
+        
+        function renderNotes(){
+            let list=document.getElementById("notesList");
+            list.innerHTML="";
+            notes.forEach((note,index)=>{
+                let div=document.createElement("div");
+                div.className="note";
+                let p=document.createElement("p");
+                p.textContent=note;
+                div.appendChild(p);
+                list.appendChild(div);
+            })
+        }
+        function clearNotes(){
+            localStorage.clear();
+        }
+        let clearbtn=document.getElementById("clearnotes");
+        clearbtn.addEventListener("click",clearNotes);
+        renderNotes();
+    </script>
+</body>
+</html>
