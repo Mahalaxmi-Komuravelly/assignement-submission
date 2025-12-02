@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p{
+            font-size: 16px;
+            color: rgb(134, 48, 48);
+        }
+        button{
+            background-color: rgb(73, 73, 220);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="addparagaph">Add Paragraph</button>
+    <button id="removelastpara">Remove Last Paragraph</button>
+    <div id="newparas">
+
+    </div>
+    <script>
+        function addParagraph(){
+            let paralist=document.getElementById("newparas");
+            let para=document.createElement("p");
+            para.textContent="This is a new paragraph.";
+            paralist.appendChild(para);
+        }
+
+        let addbtn=document.getElementById("addparagaph");
+        addbtn.addEventListener("click",addParagraph);
+
+        function removeLastPara(){
+            let paralist=document.getElementById("newparas");
+            let lastpara=paralist.lastElementChild;
+            // let len=paralist.children.length;
+            // console.log(len);
+            paralist.removeChild(lastpara);
+
+        }
+        let remlastparabtn=document.getElementById("removelastpara");
+        remlastparabtn.addEventListener("click",removeLastPara);
+
+    </script>
+</body>
+</html>
