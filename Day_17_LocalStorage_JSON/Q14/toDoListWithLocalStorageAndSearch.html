@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button,input{
+            padding: 8px;
+            margin: 5px;
+            color: white;
+            border-radius: 6px;
+            border: none;
+        }
+        h2{
+            color: blue;
+            text-align: center;
+            font-size: 26px;
+        }
+        input{
+            border: 1px solid #ddd;
+        }
+        #box{
+            display: flex;
+        }
+        #container{
+            
+            background-color: white;
+            padding: 10px 25px;
+            width: 500px;
+            border-radius: 10px;
+        }
+        .card{
+            display: flex;
+            gap: 10px;
+            background-color: #ddd;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 6px;
+        }
+        #addtaskbtn{
+            background-color: rgb(82, 125, 190);
+        }
+        #complete{
+            background-color: green;
+        }
+        #deletebtn{
+            background-color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+        
+            <h2>To-Do List</h2>
+            <input id="searchInput"type="text" placeholder="Search task here...">
+            <div id="box">
+                <input type="text" id="taskInput" placeholder="Enter task here...">
+                <button id="addtaskbtn">Add Task</button>
+            </div>
+            
+        
+        <div id="tasksList">
+
+        </div>
+        
+    </div>
+</body>
+<script>
+    let tasks=JSON.parse(localStorage.getItem("tasks"))||[];
+    function save(){
+        localStorage.setItem("tasks",JSON.stringify(tasks));
+    }
+    function addTask(){
+        let task=document.getElementById("taskInput").value;
+        if(task===""){
+            alert("Please enter task!");
+            return;
+        }
+        tasks.push(
+            { 
+                id:crypto.randomUUID(),
+                text:task,
+                completed:false
+            });
+        save();
+        renderTasks(); 
+        document.getElementById("taskInput").value="";  
+    }
+    let addtaskbtn=document.getElementById("addtaskbtn");
+    addtaskbtn.addEventListener("click",addTask);
+
+    function renderTasks(){
+        let tasksList=document.getElementById("tasksList");
+        tasksList.innerHTML="";
+        tasks.forEach((task,index)=>{
+            let card=document.createElement("div");
+            card.className="card";
+
+            let t=document.createElement("p");
+            t.setAttribute("id","task");
+            t.textContent=task.text;
+
+            let completebtn=document.createElement("button");
+            completebtn.textContent="Done";
+            completebtn.setAttribute("id","complete");
+            if(task.completed){
+                t.style.textDecoration="line-through";
+            }
+            completebtn.addEventListener("click",()=>{
+                task.completed=!task.completed;
+                save();
+                renderTasks();
+            });
+
+            let deletebtn=document.createElement("button");
+            deletebtn.textContent="Delete";
+            deletebtn.setAttribute("id","deletebtn");
+            deletebtn.addEventListener("click",()=>{
+                tasks.splice(index,1);
+                save();
+                renderTasks();
+            });
+
+            card.append(t, completebtn,deletebtn);
+            tasksList.append(card);
+        });
+    }
+    renderTasks();
+
+    let searchText=document.getElementById("searchInput");
+    searchText.addEventListener("input",searchTask);
+
+    function searchTask(){
+        let searchtask=document.getElementById("searchInput").value.toLowerCase();
+        //console.log(searchtask);
+        let filtered=tasks.filter(task=>task.text.toLowerCase().includes(searchtask));
+        //console.log(filtered);
+        renderFiltered(filtered);
+    }
+
+    function renderFiltered(arr){
+        let tasksList=document.getElementById("tasksList");
+        tasksList.innerHTML="";
+        arr.forEach((task,index)=>{
+            let card=document.createElement("div");
+            card.className="card";
+
+            let t=document.createElement("p");
+            t.textContent=task.text; 
+
+            if(task.completed){
+                t.style.textDecoration="line-through";
+            }
+
+            let completebtn=document.createElement("button");
+            completebtn.setAttribute("id","completebtn");
+            completebtn.textContent="Done";
+            completebtn.addEventListener("click",()=>{
+                task.completed=!task.completed;
+                save();
+                renderTasks();
+            })
+
+            let deletebtn=document.createElement("button");
+            deletebtn.setAttribute("id","deletebtn");
+            deletebtn.textContent="Delete";
+            deletebtn.addEventListener("click",()=>{
+                arr.splice(index,1);
+                save();
+                renderTasks();
+            });
+            card.append(t,completebtn,deletebtn);
+            tasksList.append(card);
+        }) 
+    }
+</script>
+</html>
